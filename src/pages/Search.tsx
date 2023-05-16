@@ -3,10 +3,13 @@ import Wrapper from "../sections/Wrapper";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { getInitialPokemonData } from "../app/reducers/getInitialPokemonData";
 import { getPokemonData } from "../app/reducers/getPokemonData";
+import PokemonCardGrid from "../components/PokemonCardGrid";
 
 function Search() {
   const dispatch = useAppDispatch();
-  const { allPokemon } = useAppSelector(({ pokemon }) => pokemon);
+  const { allPokemon, randomPokemons } = useAppSelector(
+    ({ pokemon }) => pokemon
+  );
   useEffect(() => {
     dispatch(getInitialPokemonData());
   }, [dispatch]);
@@ -17,11 +20,18 @@ function Search() {
       const randomPokemonsId = clonedPokemons
         .sort(() => Math.random() - Math.random())
         .slice(0, 20);
-        dispatch(getPokemonData(randomPokemonsId))
+      dispatch(getPokemonData(randomPokemonsId));
     }
   }, [allPokemon, dispatch]);
 
-  return <div>Search</div>;
+  return (
+    <>
+      <div className="search">
+        <input type="text" name="" id="" />
+        <PokemonCardGrid pokemons={randomPokemons} />
+      </div>
+    </>
+  );
 }
 
 export default Wrapper(Search);
