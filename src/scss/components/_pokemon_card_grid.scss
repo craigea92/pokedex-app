@@ -1,0 +1,32 @@
+.pokemon-card-grid-container {
+  max-height: 80vh;
+  overflow-y: scroll;
+  .pokemon-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+    margin: 4rem;
+    margin-top: 2rem;
+    .pokemon-card {
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.125);
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      position: relative;
+      &-title {
+        text-align: center;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      &-image {
+        height: 10rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
