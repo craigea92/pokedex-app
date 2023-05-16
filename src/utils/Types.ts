@@ -26,3 +26,7 @@ export interface pokemonTypeInterface {
     vulnerable: string[];
   };
 }
+
+export interface userPokemonsType extends generatedPokemonType {
+  firebaseId?: string;
+}
