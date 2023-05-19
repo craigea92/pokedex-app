@@ -5,6 +5,7 @@ import { FaPlus, FaTrash } from "react-icons/fa";
 import { pokemonTypeInterface, userPokemonsType } from "../utils/Types";
 import { useAppDispatch } from "../app/hooks";
 import { addToCompare } from "../app/slices/PokemonSlice";
+import { setToast } from "../app/slices/AppSlice";
 
 function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
   const location = useLocation();
@@ -28,7 +29,14 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
                   )}
                 </div>
                 <div className="pokemon-card-compare">
-                  <IoGitCompare onClick={() => dispatch(addToCompare(data))} />
+                  <IoGitCompare
+                    onClick={() => {
+                      dispatch(addToCompare(data));
+                      dispatch(
+                        setToast(`${data.name} has been added to Compare Queue`)
+                      );
+                    }}
+                  />
                 </div>
                 <h3 className="pokemon-card-title">{data.name}</h3>
                 <img
