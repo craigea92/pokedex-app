@@ -10,6 +10,16 @@
 <a href="https://www.npmjs.com/"> <img src="https://icongr.am/devicon/npm-original-wordmark.svg?size=40&color=currentColor" alt="npm"/> </a>
 <a href="https://sass-lang.com/"> <img src="https://icongr.am/devicon/sass-original.svg?size=40&color=currentColor" alt="sass"/> </a>
 
+## How to Install and Run
+```
+git clone https://github.com/craigea92/pokedex-app.git
+cd pokedex-app
+npm install
+npm start
+```
+## Screenshot
+<img width="1723" alt="image" src="https://github.com/craigea92/pokedex-app/assets/82875984/589857c0-4883-4ba8-8e11-8b1d67e33260">
+
 ## SASS
 
 Just like CSS, SASS also supports the @import directive. The @import directive allows you to include the content of one file in another.
