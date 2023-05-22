@@ -1,0 +1,31 @@
+.compare-container {
+  height: 100%;
+  width: 100%;
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-direction: column;
+    height: 100%;
+    button {
+      cursor: pointer;
+      border-radius: 10rem;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: var(--accent-color);
+      svg {
+        font-size: 5rem;
+        color: whitesmoke;
+      }
+    }
+    h3 {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+    }
+  }
+}
