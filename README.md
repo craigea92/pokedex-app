@@ -20,14 +20,17 @@ npm start
 ## Screenshot
 <img width="1723" alt="image" src="https://github.com/craigea92/pokedex-app/assets/82875984/589857c0-4883-4ba8-8e11-8b1d67e33260">
 
-## SASS
+## SCSS
 
-Just like CSS, SASS also supports the @import directive. The @import directive allows you to include the content of one file in another.
+Just like CSS, SCSS also supports the @import directive. The @import directive allows you to include the content of one file in another.
 
-The CSS @import directive has a major drawback due to performance issues; it creates an extra HTTP request each time you call it. However, the SASS @import directive includes the file in the CSS; so no extra HTTP call is required at runtime!
+The CSS @import directive has a major drawback due to performance issues; it creates an extra HTTP request each time you call it. However, the SCSS @import directive includes the file in the CSS; so no extra HTTP call is required at runtime!
 
-## SASS Ampersand
+## SCSS Ampersand
 
 The & is an extremely useful feature in Sass (and Less). It’s used when nesting. It can be a nice time-saver when you know how to use it, or a bit of a time-waster when you’re struggling and could have written the same code in regular CSS.
 
 "&-" can be quite useful if employing a naming methodology (i.e. BEM) which uses dash and underscore combinated classes rather than combined selectors.
+
+## Semantic HTML
+A semantic element clearly describes its meaning to both the browser and the developer. Examples of Semantic HTML are form, table and article.
