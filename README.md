@@ -34,3 +34,7 @@ The & is an extremely useful feature in Sass (and Less). It’s used when nestin
 
 ## Semantic HTML
 A semantic element clearly describes its meaning to both the browser and the developer. Examples of Semantic HTML are form, table and article.
+
+## Async Functions
+
+When a function is declared as async, it automatically returns a Promise. Inside an async function, you can use the await keyword to pause the execution of the function until a Promise is resolved or rejected. Using an async function allows you to write asynchronous code that looks and behaves more like synchronous code, making it easier to work with Promises and handle asynchronous operations in a more sequential manner.
