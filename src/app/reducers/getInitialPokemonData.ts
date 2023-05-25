@@ -15,5 +15,7 @@ export const getInitialPokemonData = createAsyncThunk(
 );
 
 /*
-The getInitialPokemonData function makes an API call using axios.get to fetch data from the pokemonsRoute URL, and it returns the data.results from the API response. 
+The getInitialPokemonData function makes an API call using axios.get 
+to fetch data from the pokemonsRoute URL, and it returns the data.results 
+from the API response. 
 */
