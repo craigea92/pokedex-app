@@ -39,7 +39,11 @@ function CompareContainer({
                     const keys = Object.keys(type);
                     return (
                       <div className="pokemon-type">
-                        <img src={type[keys[0]].image} alt="pokemon type" />
+                        <img
+                          src={type[keys[0]].image}
+                          className="pokemon-type-image"
+                          alt="pokemon type"
+                        />
                       </div>
                     );
                   })}
@@ -47,6 +51,11 @@ function CompareContainer({
               </div>
               {/* {getStats()} */}
             </div>
+          </div>
+          <div className="compare-action-buttons">
+            <button className="compare-btn">Add</button>
+            <button className="compare-btn">View</button>
+            <button className="compare-btn">Remove</button>
           </div>
         </div>
       )}
