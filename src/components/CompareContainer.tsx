@@ -52,7 +52,7 @@ function CompareContainer({
           </div>
         </div>
         <div className="pokemon-types">
-          <h4 className="pokemon-type-title">Strength</h4>
+          <h4 className="pokemon-type-title">Resistance</h4>
           <div className="pokemon-type-icons">
             {createStatsArray(pokemon?.types!, "resistance").map(
               (stat: { image: string }) => (
@@ -68,7 +68,7 @@ function CompareContainer({
           </div>
         </div>
         <div className="pokemon-types">
-          <h4 className="pokemon-type-title">Strength</h4>
+          <h4 className="pokemon-type-title">Vulnerable</h4>
           <div className="pokemon-type-icons">
             {createStatsArray(pokemon?.types!, "vulnerable").map(
               (stat: { image: string }) => (
@@ -84,7 +84,7 @@ function CompareContainer({
           </div>
         </div>
         <div className="pokemon-types">
-          <h4 className="pokemon-type-title">Strength</h4>
+          <h4 className="pokemon-type-title">Weakness</h4>
           <div className="pokemon-type-icons">
             {createStatsArray(pokemon?.types!, "weakness").map(
               (stat: { image: string }) => (
