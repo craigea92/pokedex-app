@@ -6,6 +6,8 @@ import {
 } from "../utils/Types";
 import { FaPlus } from "react-icons/fa";
 import { pokemonTypes } from "../utils/getPokemonTypes";
+import { useAppDispatch } from "../app/hooks";
+import { removeFromCompare } from "../app/slices/PokemonSlice";
 
 function CompareContainer({
   pokemon = undefined,
@@ -14,6 +16,7 @@ function CompareContainer({
   pokemon?: userPokemonsType;
   isEmpty?: boolean;
 }) {
+  const dispatch = useAppDispatch();
   const createStatsArray = (
     types: pokemonTypeInterface[],
     statType: pokemonStatType
@@ -147,7 +150,12 @@ function CompareContainer({
           <div className="compare-action-buttons">
             <button className="compare-btn">Add</button>
             <button className="compare-btn">View</button>
-            <button className="compare-btn">Remove</button>
+            <button
+              className="compare-btn"
+              onClick={() => dispatch(removeFromCompare({ id: pokemon.id }))}
+            >
+              Remove
+            </button>
           </div>
         </div>
       )}
