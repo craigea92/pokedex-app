@@ -17,8 +17,10 @@ cd pokedex-app
 npm install
 npm start
 ```
-## Screenshot
+## Screenshots
 <img width="1723" alt="image" src="https://github.com/craigea92/pokedex-app/assets/82875984/589857c0-4883-4ba8-8e11-8b1d67e33260">
+
+<img width="1719" alt="image" src="https://github.com/craigea92/pokedex-app/assets/82875984/00952711-bb7f-4a6d-997c-64faa48604ca">
 
 ## SCSS
 
