@@ -59,13 +59,9 @@ The CSS @import directive has a major drawback due to performance issues; it cre
 
 ## SCSS Ampersand
 
-The & is an extremely useful feature in Sass (and Less). It’s used when nesting. It can be a nice time-saver when you know how to use it, or a bit of a time-waster when you’re struggling and could have written the same code in regular CSS.
+The & is an extremely useful feature in SCSS. It’s used when nesting. It can be a nice time-saver when you know how to use it, or a bit of a time-waster when you’re struggling and could have written the same code in regular CSS.
 
 "&-" can be quite useful if employing a naming methodology (i.e. BEM) which uses dash and underscore combinated classes rather than combined selectors.
-
-## Semantic HTML
-
-A semantic element clearly describes its meaning to both the browser and the developer. Examples of Semantic HTML are form, table and article.
 
 ## Async Functions
 
