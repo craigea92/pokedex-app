@@ -5,7 +5,6 @@ import { useAppSelector } from "../app/hooks";
 
 function MyList() {
   const { userInfo } = useAppSelector(({ app }) => app);
-  
   return <div className="list">
     <Login />
   </div>;

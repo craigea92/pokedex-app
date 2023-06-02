@@ -6,6 +6,7 @@ import { pokemonTypeInterface, userPokemonsType } from "../utils/Types";
 import { useAppDispatch } from "../app/hooks";
 import { addToCompare } from "../app/slices/PokemonSlice";
 import { setToast } from "../app/slices/AppSlice";
+import { addPokemonToList } from "../app/reducers/addPokemontoList";
 
 function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
   const location = useLocation();
@@ -23,7 +24,10 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
                 <div className="pokemon-card-list">
                   {location.pathname.includes("/pokemon") ||
                   location.pathname.includes("/search") ? (
-                    <FaPlus className="plus" />
+                    <FaPlus
+                      className="plus"
+                      onClick={() => dispatch(addPokemonToList(data))}
+                    />
                   ) : (
                     <FaTrash className="trash" />
                   )}
