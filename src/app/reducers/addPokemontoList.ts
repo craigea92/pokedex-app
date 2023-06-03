@@ -8,6 +8,7 @@ import { RootState } from "../store";
 import { setToast } from "../slices/AppSlice";
 import { addDoc } from "@firebase/firestore";
 import { pokemonListRef } from "../../utils/FirebaseConfig";
+import { getUserPokemons } from "./getUserPokemons";
 
 export const addPokemonToList = createAsyncThunk(
   "pokemon/addPokemon",
@@ -25,7 +26,7 @@ export const addPokemonToList = createAsyncThunk(
         app: { userInfo },
         pokemon: { userPokemons },
       } = getState() as RootState;
-      if (userInfo?.email) {
+      if (!userInfo?.email) {
         return dispatch(
           setToast("Please login to add Pokemon to your collection")
         );
@@ -35,15 +36,27 @@ export const addPokemonToList = createAsyncThunk(
       });
       if (index === -1) {
         let types: string[] = [];
-        types = pokemon.types as string[];
-        await addDoc(pokemonListRef, {
-          pokemon: {id: pokemon.id, name: pokemon.name, types },
-        });
-        // await dispatch(getUSerPokemons())
-        return dispatch(setToast(`${pokemon.name} has been added to your collection`));
-      } else {
-        return dispatch(setToast(`${pokemon.name} is already in your collection`));
 
+        if (!pokemon.stats) {
+          pokemon.types.forEach((type: any) =>
+            types.push(Object.keys(type).toString())
+          );
+        } else {
+          types = pokemon.types as string[];
+        }
+
+        await addDoc(pokemonListRef, {
+          pokemon: { id: pokemon.id, name: pokemon.name, types },
+          email: userInfo.email,
+        });
+        await dispatch(getUserPokemons());
+        return dispatch(
+          setToast(`${pokemon.name} has been added to your collection`)
+        );
+      } else {
+        return dispatch(
+          setToast(`${pokemon.name} is already in your collection`)
+        );
       }
     } catch (err) {
       console.log(err);
