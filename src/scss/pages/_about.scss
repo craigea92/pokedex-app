@@ -1,0 +1,23 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+  color: white;
+  margin-top: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  h1 {
+    font-size: 3rem;
+  }
+  &-text {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
+  &-image {
+    height: 15rem;
+  }
+}
