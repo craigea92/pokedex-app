@@ -1,15 +1,24 @@
 import React, { useEffect, useCallback } from "react";
 import Wrapper from "../sections/Wrapper";
 import { useParams } from "react-router-dom";
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import axios from "axios";
-import { pokemonRoute, pokemonSpeciesRoute } from "../utils/Constants";
+import {
+  pokemonRoute,
+  pokemonSpeciesRoute,
+  pokemonTabs,
+} from "../utils/Constants";
 import { defaultImages, images } from "../utils/getPokemonImages";
 import { extractColors } from "extract-colors";
+import Description from "./Pokemon/Description";
+import Evolution from "./Pokemon/Evolution";
+import CapableMoves from "./Pokemon/CapableMoves";
+import Location from "./Pokemon/Location";
 
 function Pokemon() {
   const params = useParams();
   const dispatch = useAppDispatch();
+  const { currentPokemonTab } = useAppSelector(({ app }) => app);
 
   const getRecursiveEvolution: any = useCallback(
     (evolutionChain: any, level: number, evolutionData: any) => {
@@ -140,7 +149,14 @@ function Pokemon() {
     getPokemonInfo(imageElemet.src);
   }, [params, getPokemonInfo]);
 
-  return <div>Pokemon</div>;
+  return (
+    <div>
+      {currentPokemonTab === pokemonTabs.description && <Description />};
+      {currentPokemonTab === pokemonTabs.evolution && <Evolution />}
+      {currentPokemonTab === pokemonTabs.locations && <Location />}
+      {currentPokemonTab === pokemonTabs.moves && <CapableMoves />}
+    </div>
+  );
 }
 
 export default Wrapper(Pokemon);

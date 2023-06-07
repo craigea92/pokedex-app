@@ -2,12 +2,13 @@ import { signOut } from "@firebase/auth";
 import React from "react";
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 import { firebaseAuth } from "../utils/FirebaseConfig";
-import { useAppDispatch } from "../app/hooks";
-import { setToast, setUserStatus } from "../app/slices/AppSlice";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { setPokemonTab, setToast, setUserStatus } from "../app/slices/AppSlice";
 import { pokemonTabs } from "../utils/Constants";
 import { useLocation } from "react-router";
 function Footer() {
   const dispatch = useAppDispatch();
+  const { currentPokemonTab } = useAppSelector(({ app }) => app);
   const location = useLocation();
   const handleLogout = () => {
     signOut(firebaseAuth);
@@ -42,7 +43,13 @@ function Footer() {
           <ul>
             {routes.map((route) => {
               return (
-                <li key={route.name} className="" onClick={() => {}}>
+                <li
+                  key={route.name}
+                  className={`${currentPokemonTab === route.name ? "active" : ""}`}
+                  onClick={() => {
+                    dispatch(setPokemonTab(route.name));
+                  }}
+                >
                   {route.value}
                 </li>
               );
