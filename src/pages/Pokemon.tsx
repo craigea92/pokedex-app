@@ -14,6 +14,7 @@ import Description from "./Pokemon/Description";
 import Evolution from "./Pokemon/Evolution";
 import CapableMoves from "./Pokemon/CapableMoves";
 import Location from "./Pokemon/Location";
+import { setCurrentPokemon } from "../app/slices/PokemonSlice";
 
 function Pokemon() {
   const params = useParams();
@@ -91,7 +92,7 @@ function Pokemon() {
       const evolutionLevel = evolution.find(
         ({ pokemon }) => pokemon.name === data.name
       ).level;
-      console.log({
+      dispatch(setCurrentPokemon({
         id: data.id,
         name: data.name,
         types: data.types.map(
@@ -114,9 +115,9 @@ function Pokemon() {
         evolutionLevel,
         evolution,
         pokemonAbilities,
-      });
+      }));
     },
-    [getEvolutionData, params.id]
+    [getEvolutionData, params.id, dispatch]
   );
 
   useEffect(() => {
