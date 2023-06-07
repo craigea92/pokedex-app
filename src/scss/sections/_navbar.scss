@@ -51,7 +51,7 @@ nav {
   position: absolute;
   z-index: 0;
   bottom: 0;
-  background-color: white;
+  background-color: var(--accent-color);
   width: 20%;
   height: calc(4px / 2);
   mix-blend-mode: initial;
