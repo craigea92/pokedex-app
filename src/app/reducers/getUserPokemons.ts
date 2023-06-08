@@ -18,7 +18,7 @@ export const getUserPokemons = createAsyncThunk(
       }
       const firestoreQuery = query(
         pokemonListRef,
-        where("email", "==", userInfo.email)
+        where("email", "==", userInfo?.email)
       );
       const fetchedPokemons = await getDocs(firestoreQuery);
       if (fetchedPokemons.docs.length) {
