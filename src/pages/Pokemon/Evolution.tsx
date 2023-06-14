@@ -12,8 +12,11 @@ function Evolution() {
 
   useEffect(() => {
     const fetchData = async () => {
+      // Extracting the array of Pokemon from the currentPokemon's evolution property
       const pokemons = currentPokemon?.evolution.map(({ pokemon }) => pokemon);
+      // Fetching Pokemon data for the extracted array of Pokemon
       await dispatch(getPokemonData(pokemons!));
+      // Setting the isLoaded state to true
       setIsLoaded(true);
     };
     fetchData();
