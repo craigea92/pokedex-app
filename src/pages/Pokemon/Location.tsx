@@ -2,6 +2,7 @@ import React from "react";
 import { useAppSelector } from "../../app/hooks";
 
 function Location() {
+  // Extracting the currentPokemon data from the pokemon state using the useAppSelector hook
   const pokemonData = useAppSelector(
     ({ pokemon: { currentPokemon } }) => currentPokemon
   );
