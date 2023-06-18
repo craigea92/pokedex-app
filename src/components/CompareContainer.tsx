@@ -17,8 +17,12 @@ function CompareContainer({
   pokemon?: userPokemonsType;
   isEmpty?: boolean;
 }) {
+  // Getting the dispatch function using the useAppDispatch hook
   const dispatch = useAppDispatch();
+  // Getting the navigate function from the useNavigate hook
   const navigate = useNavigate();
+
+  // Function to create an array of stats for a specific type
   const createStatsArray = (
     types: pokemonTypeInterface[],
     statType: pokemonStatType
@@ -37,6 +41,8 @@ function CompareContainer({
     });
     return statsArray;
   };
+
+  // Function to get the stats for the pokemon
   const getStats = () => {
     return (
       <>
