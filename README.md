@@ -66,3 +66,9 @@ The & is an extremely useful feature in SCSS. It’s used when nesting. It can b
 ## Async Functions
 
 When a function is declared as async, it automatically returns a Promise. Inside an async function, you can use the await keyword to pause the execution of the function until a Promise is resolved or rejected. Using an async function allows you to write asynchronous code that looks and behaves more like synchronous code, making it easier to work with Promises and handle asynchronous operations in a more sequential manner.
+
+
+## What is a Reducer?
+In the context of Redux and Redux Toolkit, a reducer is a function that specifies how the application's state should change in response to dispatched actions. It takes in the current state and an action as arguments, and returns a new state that reflects the desired changes.
+
+Reducers are pure functions, which means they should not modify the existing state directly, but instead create and return a new state object. Redux follows an immutable data pattern, where state updates are achieved by creating new copies of the state with the desired modifications.
