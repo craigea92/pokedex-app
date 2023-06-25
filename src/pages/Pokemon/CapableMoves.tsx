@@ -8,20 +8,18 @@ function CapableMoves() {
   );
   return (
     <div className="capable-moves">
-      <h1 className="capable-move-title">Abilities</h1>
+      <h1 className="capable-moves-title">Abilities</h1>
       <ul className="capable-moves-list ability">
-
-        {pokemonData?.pokemonAbilities.abilities.map((ability:string)=> (
-          <li key={ability} className="pokemon-location">
+        {pokemonData?.pokemonAbilities.abilities.map((ability: string) => (
+          <li key={ability} className="move">
             {ability}
           </li>
         ))}
       </ul>
-      <h1 className="capable-move-title">Moves</h1>
-      <ul className="capable-moves-list ability">
-
-        {pokemonData?.pokemonAbilities.moves.map((move:string)=> (
-          <li key={move} className="pokemon-location">
+      <h1 className="capable-moves-title">Moves</h1>
+      <ul className="capable-moves-list">
+        {pokemonData?.pokemonAbilities.moves.map((move: string) => (
+          <li key={move} className="move">
             {move}
           </li>
         ))}
