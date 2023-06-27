@@ -9,7 +9,7 @@ function Description() {
   );
   return (
     <div>
-      <PokemonContainer />
+      <PokemonContainer image={pokemonData?.image}/>
     </div>
   );
 }
