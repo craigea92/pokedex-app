@@ -26,5 +26,17 @@
         height: 17rem;
       }
     }
+  .lines {
+    display: flex;
+    gap: 3rem;
+    position: absolute;
+    .line {
+      height: 28rem;
+      width: 0.3rem;
+      background-color: var(--accent-color);
+      transform: rotate(45deg);
+    }
+
+  }
   }
 }
