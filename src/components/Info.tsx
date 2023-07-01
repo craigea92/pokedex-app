@@ -38,7 +38,7 @@ export default function Info({
         
         <h3>Evolution: {data?.evolutionLevel}</h3>
         <button onClick={() => dispatch(setPokemonTab(pokemonTabs.evolution))}>
-          See next evolution
+          See Evolutions
         </button>
       </div>
       <div className="stats">
