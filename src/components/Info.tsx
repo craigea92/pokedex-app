@@ -13,8 +13,10 @@ export default function Info({
 }) {
   const dispatch = useAppDispatch();
   useEffect(() => {
+    // Get all progress bars in the document
     const progressBars = document.querySelectorAll("progress");
     progressBars.forEach((progressBar) => {
+      // Set the width of each progress bar to "10rem"
       progressBar.style.width = "10rem";
     });
   }, []);
@@ -23,11 +25,14 @@ export default function Info({
     types.forEach((type: string) => {
       // @ts-ignore
       pokemonTypes[type][statType].forEach((stat: string) => {
-        if (!statsSet.has(stat)) {
-          statsSet.add(stat[0].toUpperCase() + stat.slice(1));
+        // Convert the first character of each stat to uppercase
+        const formattedStat = stat[0].toUpperCase() + stat.slice(1);
+        if (!statsSet.has(formattedStat)) {
+          statsSet.add(formattedStat);
         }
       });
     });
+    // Convert the set to an array and return it
     return Array.from(statsSet);
   };
   return (
