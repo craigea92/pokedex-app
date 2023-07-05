@@ -11,8 +11,11 @@ function Footer() {
   const { currentPokemonTab } = useAppSelector(({ app }) => app);
   const location = useLocation();
   const handleLogout = () => {
+    // Sign out the user from the firebaseAuth service
     signOut(firebaseAuth);
+    // Reset the user status in the application state
     dispatch(setUserStatus(undefined));
+    // Set a toast message indicating successful logout
     dispatch(setToast("Logged out successfully"));
   };
 
