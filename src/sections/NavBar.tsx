@@ -5,40 +5,48 @@ import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
   const location = useLocation();
-  const navigationRoutes = useMemo(() => [
 
-    {
-      name: "Search",
-      route: "/search",
-    },
-    {
-      name: "Compare",
-      route: "/compare",
-    },
-    {
-      name: "Pokemon",
-      route: "/pokemon",
-    },
-    {
-      name: "My List",
-      route: "/list",
-    },
-    {
-      name: "About",
-      route: "/about",
-    },
-  ],[]);
+  // Define the navigation routes using useMemo to memoize the routes array
+  const navigationRoutes = useMemo(
+    () => [
+      {
+        name: "Search",
+        route: "/search",
+      },
+      {
+        name: "Compare",
+        route: "/compare",
+      },
+      {
+        name: "Pokemon",
+        route: "/pokemon",
+      },
+      {
+        name: "My List",
+        route: "/list",
+      },
+      {
+        name: "About",
+        route: "/about",
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
+    // Find the index of the current route in the navigationRoutes array
     const index = navigationRoutes.findIndex(({ route }) =>
       location.pathname.includes(route)
     );
+    // Call the ul function to update the underlines based on the current index
     ul(index);
   }, [location.pathname, navigationRoutes]);
 
   function ul(index: number) {
+    // Get all elements with class "underline"
     const underlines = document.querySelectorAll<HTMLElement>(".underline");
     for (let i = 0; i < underlines.length; i++) {
+      // Translate the underlines horizontally based on the current index
       underlines[i].style.transform = "translate3d(" + index * 100 + "%,0,0)";
     }
   }
