@@ -21,8 +21,10 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    // Check if a user is authenticated when the component mounts
     onAuthStateChanged(firebaseAuth, (currentUser) => {
       if (currentUser) {
+        // If the user is authenticated, set the user status with the email
         dispatch(setUserStatus({ email: currentUser.email }));
       }
     });
@@ -37,9 +39,11 @@ function App() {
         draggable: true,
         theme: "dark",
       };
+      // Show toast messages for each item in the toasts array
       toasts.forEach((message: string) => {
         toast(message, toastOptions);
       });
+      // Clear toasts in the application state
       dispatch(clearToasts());
     }
   }, [toasts, dispatch]);
