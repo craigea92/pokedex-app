@@ -2,6 +2,12 @@
 
 ## Project Description
 
+In preparation for my upcoming project, I embarked on building a fully functional website using React. Alongside this endeavor, I aimed to enhance my proficiency in SCSS, a CSS preprocessor, as well as gain expertise in working with APIs. The website boasts reusable components, including an interactive grid of Pokémon cards. Users have the ability to log in, log out, and curate their personal Pokémon list, which is securely stored in a Firebase database. Furthermore, users can effortlessly search for their favorite Pokémon and compare them. All of this data is sourced from a Pokémon API, accessed through Axios.
+
+One of the notable challenges encountered during this project revolved around setting up the API integration and successfully retrieving the desired data. To overcome this obstacle, I utilized console logs and consulted various guides to identify and debug any issues that arose. Additionally, I faced the task of prioritizing TypeScript within the project. While I have previously utilized TypeScript in a professional environment, I encountered some difficulty when delving into the realm of typings. Hence, continuous practice with types is still necessary for further refinement.
+
+Although this project is nearly complete, future plans include optimizing the UI to be more responsive across different screen sizes. At present, the website functions seamlessly on any laptop screen size, ensuring a satisfying user experience.
+
 ## Tech Stack
 
 <a href="https://www.typescriptlang.org/"> <img src="https://icongr.am/devicon/typescript-plain.svg?size=40&color=currentColor" alt="typescript"/> </a>
